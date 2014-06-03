@@ -30,10 +30,7 @@ plugin.tx_bnbfilesharing {
 		userGroupAllowDeleteFolders = all
 		
 		#all,owner,[id Usergroup]
-		userGroupAllowEditFiles = 	all		
-		
-		#all,owner,[id Usergroup]
-		userGroupAllowEditFiles = 	all		
+		userGroupAllowEditFiles = 	all
 		
 		#all,owner,[id Usergroup]
 		userGroupAllowDeleteFiles = 	all		
