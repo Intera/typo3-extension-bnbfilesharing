@@ -6,6 +6,7 @@ plugin.tx_bnbfilesharing {
 	}
 	persistence {
 		storagePid = {$plugin.tx_bnbfilesharing.persistence.storagePid}
+		userGroupAdmin = {$plugin.tx_bnbfilesharing.persistence.userGroupAdmin}
 		userGroupAllowEditFolders = {$plugin.tx_bnbfilesharing.persistence.userGroupAllowEditFolders}		
 		userGroupAllowEditFiles = {$plugin.tx_bnbfilesharing.persistence.userGroupAllowEditFiles}				
 		userGroupAllowDownload = {$plugin.tx_bnbfilesharing.persistence.userGroupAllowDownload}								
