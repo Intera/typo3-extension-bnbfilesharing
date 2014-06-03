@@ -210,7 +210,7 @@ class Tx_Bnbfilesharing_Controller_FolderController extends Tx_Extbase_MVC_Contr
 		if($this->loadjqueryForm)		
 			$GLOBALS['TSFE']->additionalHeaderData[$this->prefixId] .='<script type="text/javascript" src="typo3conf/ext/bnbfilesharing/Resources/Public/javascript/jqueryform.js"></script>';
 		$GLOBALS['TSFE']->additionalHeaderData[$this->prefixId] .='<script type="text/javascript" src="typo3conf/ext/bnbfilesharing/Resources/Public/javascript/filesharing.js"></script>';		
-		if($this->loadjqueryForm){				
+		if($this->loadFancybox){
 			$GLOBALS['TSFE']->additionalHeaderData[$this->prefixId] .='<script type="text/javascript" src="typo3conf/ext/bnbfilesharing/Resources/Public/javascript/fancybox/jquery.fancybox-1.3.4.js"></script>';		
 			$GLOBALS['TSFE']->additionalHeaderData[$this->prefixId] .='<link rel="stylesheet" href="typo3conf/ext/bnbfilesharing/Resources/Public/javascript/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />';		
 		}	
