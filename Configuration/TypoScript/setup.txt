@@ -1,0 +1,85 @@
+plugin.tx_bnbfilesharing {
+	view {
+		templateRootPath = {$plugin.tx_bnbfilesharing.view.templateRootPath}
+		partialRootPath = {$plugin.tx_bnbfilesharing.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_bnbfilesharing.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_bnbfilesharing.persistence.storagePid}
+		userGroupAllowEditFolders = {$plugin.tx_bnbfilesharing.persistence.userGroupAllowEditFolders}		
+		userGroupAllowEditFiles = {$plugin.tx_bnbfilesharing.persistence.userGroupAllowEditFiles}				
+		userGroupAllowDownload = {$plugin.tx_bnbfilesharing.persistence.userGroupAllowDownload}								
+		allowedUploadFileTypes = {$plugin.tx_bnbfilesharing.persistence.allowedUploadFileTypes}
+		forbiddenUploadFileTypes = {$plugin.tx_bnbfilesharing.persistence.forbiddenUploadFileTypes}
+		loadjquery = {$plugin.tx_bnbfilesharing.persistence.loadjquery}		
+		loadFancybox = {$plugin.tx_bnbfilesharing.persistence.loadFancybox}		
+		loadjqueryForm = {$plugin.tx_bnbfilesharing.persistence.loadjqueryForm}				
+		createLocalRecords = {$plugin.tx_bnbfilesharing.persistence.createLocalRecords}		
+		userGroupAllowCreateRootFolders = {$plugin.tx_bnbfilesharing.persistence.userGroupAllowCreateRootFolders}		
+		userGroupAllowCreateFolders = {$plugin.tx_bnbfilesharing.persistence.userGroupAllowCreateFolders}				
+		userGroupAllowDeleteFolders	 = {$plugin.tx_bnbfilesharing.persistence.userGroupAllowDeleteFolders}							
+		userGroupAllowDeleteFiles	= {$plugin.tx_bnbfilesharing.persistence.userGroupAllowDeleteFiles}							
+		userGroupAllowUpload	= {$plugin.tx_bnbfilesharing.persistence.userGroupAllowUpload}									
+		orderFolderField	= {$plugin.tx_bnbfilesharing.persistence.orderFolderField}									
+		orderFolderOrder	= {$plugin.tx_bnbfilesharing.persistence.orderFolderOrder}													
+		orderFilesField	= {$plugin.tx_bnbfilesharing.persistence.orderFilesField}													
+		orderFilesOrder	= {$plugin.tx_bnbfilesharing.persistence.orderFilesOrder}															
+		maxUploadFilesize	= {$plugin.tx_bnbfilesharing.persistence.maxUploadFilesize}															
+	}
+}
+
+plugin.tx_bnbfilesharing._CSS_DEFAULT_STYLE (
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-filesharing table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-filesharing table th {
+		font-weight:bold;
+	}
+
+	.tx-filesharing table td {
+		vertical-align:top;
+	}
+)
+
+
+myajax = PAGE
+myajax {
+  typeNum = 74365989 
+  config {
+   disableAllHeaderCode = 1
+   xhtml_cleaning = 0
+   admPanel = 0
+   no_cache = 1
+  }
+  
+  10 < tt_content.list.20.bnbfilesharing_filesharing  
+}
+
+
+ajaxdownload = PAGE
+ajaxdownload {
+  typeNum = 74365988 
+  config {
+   disableAllHeaderCode = 1
+	 additionalHeaders = Content-type: application/octetstream
+   xhtml_cleaning = 0
+   admPanel = 0
+   no_cache = 1   
+  }
+  
+  10 < tt_content.list.20.bnbfilesharing_filesharing  
+}
+
+
+page.includeCSS { 
+  file77 = typo3conf/ext/bnbfilesharing/Resources/Public/css/filesharing.css
+  file77.title = bnbfilesharing
+  file77.media = screen
+}

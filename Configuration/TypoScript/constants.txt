@@ -1,0 +1,81 @@
+plugin.tx_bnbfilesharing {
+	view {
+		# cat=plugin.tx_bnbfilesharing/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:bnbfilesharing/Resources/Private/Templates/
+		# cat=plugin.tx_bnbfilesharing/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:bnbfilesharing/Resources/Private/Partials/
+		# cat=plugin.tx_bnbfilesharing/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:bnbfilesharing/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_bnbfilesharing//a; type=int+; label=Default storage PID		
+		
+		#uid of your storagefolder
+		storagePid = 
+		
+    #all,[id Usergroup]
+		userGroupAdmin = all
+
+		
+    #all,[id Usergroup]
+		userGroupAllowCreateRootFolders = all
+				
+    #all,owner,[id Usergroup]
+		userGroupAllowCreateFolders = all
+		
+    #all,owner,[id Usergroup]
+		userGroupAllowEditFolders = all
+		
+    #all,owner,[id Usergroup]
+		userGroupAllowDeleteFolders = all
+		
+		#all,owner,[id Usergroup]
+		userGroupAllowEditFiles = 	all		
+		
+		#all,owner,[id Usergroup]
+		userGroupAllowEditFiles = 	all		
+		
+		#all,owner,[id Usergroup]
+		userGroupAllowDeleteFiles = 	all		
+								
+		#all,owner,[id Usergroup]
+		userGroupAllowUpload =	all
+				
+		#all,[id Usergroup]
+		userGroupAllowDownload =	all		
+		
+		#filetypes which are allowed for upload
+		allowedUploadFileTypes = all
+		
+		#filetypes which are forbidden
+		forbiddenUploadFileTypes = php, php3, php4, php5
+		
+		#set 1 jquery will be loaded
+		loadjquery = 1
+		
+		#set 1 fancbox will be loaded
+		loadFancybox = 1
+		
+		#set 1 jqueryform  will be loaded
+		loadjqueryForm = 1
+		
+		#set 1 localicati0n records will be created automaticly
+		createLocalRecords = 1
+		
+		#name,date
+		orderFolderField	= name
+		
+		#ASC,DESC
+		orderFolderOrder	= ASC
+		
+		#name,date
+		orderFilesField	= name
+		
+		#ASC,DESC
+		orderFilesOrder	= ASC
+		
+		#filesisze in kb		
+		maxUploadFilesize = 1024   
+		
+	}	
+}
