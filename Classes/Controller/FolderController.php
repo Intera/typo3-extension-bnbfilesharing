@@ -147,12 +147,13 @@ class Tx_Bnbfilesharing_Controller_FolderController extends Tx_Extbase_MVC_Contr
 			$filesize=filesize($Path.$file->getFile())/(1024*1024); 
 			$filetime = filemtime ($Path.$file->getFile());
 								
-			if($file->getFeuserid() > 0){				
+
+			if ($file->getFeuserid() > 0) {
 				$row = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow(
-			  'username',
-		    'fe_users',
-		    'uid = '.$file->getFeuserid() );			
-				$feuserName =$row["username"];				
+					'first_name, last_name, username',
+					'fe_users',
+					'uid = ' . (int)$file->getFeuserid());
+				$feuserName = $row['first_name'] . ' ' . $row['last_name'] . ' (' . $row['username'] . ')';
 			}
 			else	
 				$feuserName = "";
