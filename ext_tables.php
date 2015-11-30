@@ -17,10 +17,6 @@ Tx_Extbase_Utility_Extension::registerPlugin(
 
 
 
-if (TYPO3_MODE == 'BE') {
-	$TBE_MODULES_EXT['xMOD_db_new_content_el']['addElClasses']['tx_bnbfilesharing_bnbFilesharing_wizicon'] = t3lib_extMgm::extPath($_EXTKEY) . 'Resources/Private/BackEnd/bnbfilesharing.php';
-}
-
 t3lib_extMgm::addLLrefForTCAdescr('tx_bnbfilesharing_domain_model_folder', 'EXT:bnbfilesharing/Resources/Private/Language/locallang_csh_tx_bnbfilesharing_domain_model_folder.xml');
 t3lib_extMgm::allowTableOnStandardPages('tx_bnbfilesharing_domain_model_folder');
 $TCA['tx_bnbfilesharing_domain_model_folder'] = array(
