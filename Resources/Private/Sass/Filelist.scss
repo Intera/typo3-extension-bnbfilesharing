@@ -1,0 +1,29 @@
+.tx-bnbfilesharing {
+    .tx-bnbfilesharing-ajax-form-wrapper,
+    .tx-bnbfilesharing-error {
+        display: none;
+    }
+
+    .btn-group .glyphicon {
+        vertical-align: middle;
+    }
+
+    .panel-title {
+        padding-top: 4px;
+        padding-bottom: 2px;
+    }
+
+    .tx-bnbfilesharing-accordeon-files {
+        td.actions {
+            text-align: right;
+
+            .btn-group {
+                width: 75px;
+            }
+        }
+
+        tr:first-child td {
+            border-top: 0 none;
+        }
+    }
+}

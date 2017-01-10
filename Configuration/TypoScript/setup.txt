@@ -29,25 +29,6 @@ plugin.tx_bnbfilesharing {
 	}
 }
 
-plugin.tx_bnbfilesharing._CSS_DEFAULT_STYLE (
-	input.f3-form-error {
-		background-color:#FF9F9F;
-		border: 1px #FF0000 solid;
-	}
-
-	.tx-filesharing table {
-		border-collapse:separate;
-		border-spacing:10px;
-	}
-
-	.tx-filesharing table th {
-		font-weight:bold;
-	}
-
-	.tx-filesharing table td {
-		vertical-align:top;
-	}
-)
 
 
 myajax = PAGE
