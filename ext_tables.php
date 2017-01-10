@@ -10,7 +10,7 @@ if (!defined('TYPO3_MODE')) {
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    $_EXTKEY,
+    'Tx.' . $_EXTKEY,
     'Filesharing',
     'bnbFilesharing'
 );
@@ -26,7 +26,7 @@ if (!defined('TYPO3_MODE')) {
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bnbfilesharing_domain_model_folder');
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
-    'tx_bnbfilesharing_domain_model_files',
-    'EXT:bnbfilesharing/Resources/Private/Language/locallang_csh_tx_bnbfilesharing_domain_model_files.xml'
+    'tx_bnbfilesharing_domain_model_file',
+    'EXT:bnbfilesharing/Resources/Private/Language/locallang_csh_tx_bnbfilesharing_domain_model_file.xml'
 );
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bnbfilesharing_domain_model_files');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bnbfilesharing_domain_model_file');

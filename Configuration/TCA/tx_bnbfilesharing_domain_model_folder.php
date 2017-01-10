@@ -163,8 +163,11 @@ return [
             ],
         ],
         'files' => [
+            'label' => 'files',
             'config' => [
-                'type' => 'passthrough',
+                'type' => 'inline',
+                'foreign_table' => 'tx_bnbfilesharing_domain_model_file',
+                'foreign_field' => 'folder',
             ],
         ],
     ],

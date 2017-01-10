@@ -1,7 +1,7 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:bnbfilesharing/Resources/Private/Language/locallang_db.xml:tx_bnbfilesharing_domain_model_files',
+        'title' => 'LLL:EXT:bnbfilesharing/Resources/Private/Language/locallang_db.xml:tx_bnbfilesharing_domain_model_file',
         'label' => 'file',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -19,14 +19,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY)
-            . 'Resources/Public/Icons/tx_bnbfilesharing_domain_model_files.gif'
+        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('bnbfilesharing')
+            . 'Resources/Public/Icons/tx_bnbfilesharing_domain_model_file.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, file, beschriftung, feuserid, folder',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, file, label, feuser, folder',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, file, beschriftung, feuserid, folder,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, file, label, feuser, folder,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'],
     ],
     'palettes' => [
         '1' => ['showitem' => ''],
@@ -54,8 +54,8 @@ return [
                 'items' => [
                     ['', 0],
                 ],
-                'foreign_table' => 'tx_bnbfilesharing_domain_model_files',
-                'foreign_table_where' => 'AND tx_bnbfilesharing_domain_model_files.pid=###CURRENT_PID### AND tx_bnbfilesharing_domain_model_files.sys_language_uid IN (-1,0)',
+                'foreign_table' => 'tx_bnbfilesharing_domain_model_file',
+                'foreign_table_where' => 'AND tx_bnbfilesharing_domain_model_file.pid=###CURRENT_PID### AND tx_bnbfilesharing_domain_model_file.sys_language_uid IN (-1,0)',
             ],
         ],
         'l10n_diffsource' => [
@@ -112,50 +112,44 @@ return [
         ],
         'file' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:bnbfilesharing/Resources/Private/Language/locallang_db.xml:tx_bnbfilesharing_domain_model_files.file',
+            'label' => 'LLL:EXT:bnbfilesharing/Resources/Private/Language/locallang_db.xml:tx_bnbfilesharing_domain_model_file.file',
             'config' => [
                 'type' => 'group',
                 'internal_type' => 'file',
                 'uploadfolder' => 'uploads/tx_bnbfilesharing',
                 'allowed' => '*',
-                'disallowed' => '',
-                'size' => 5,
+                'size' => 1,
+                'maxitems' => 1,
+                'minitems' => 1,
                 'eval' => 'required'
             ],
         ],
-        'beschriftung' => [
+        'label' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:bnbfilesharing/Resources/Private/Language/locallang_db.xml:tx_bnbfilesharing_domain_model_files.beschriftung',
+            'label' => 'LLL:EXT:bnbfilesharing/Resources/Private/Language/locallang_db.xml:tx_bnbfilesharing_domain_model_file.beschriftung',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim,required'
+                'eval' => 'trim'
             ],
         ],
-        'feuserid' => [
+        'feuser' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:bnbfilesharing/Resources/Private/Language/locallang_db.xml:tx_bnbfilesharing_domain_model_files.feuserid',
+            'label' => 'LLL:EXT:bnbfilesharing/Resources/Private/Language/locallang_db.xml:tx_bnbfilesharing_domain_model_file.feuserid',
             'config' => [
                 'foreign_table' => 'fe_users',
                 'minitems' => 0,
                 'maxitems' => 1,
-                'type' => 'select',
+                'type' => 'group',
+                'internal_type' => 'db',
+                'allowed' => 'fe_users',
                 'size' => 1,
                 'eval' => 'int'
             ],
         ],
-        'feuserug' => [
-            'exclude' => 0,
-            'label' => 'LLL:EXT:bnbfilesharing/Resources/Private/Language/locallang_db.xml:tx_bnbfilesharing_domain_model_files.feuserug',
-            'config' => [
-                'type' => 'input',
-                'size' => 4,
-                'eval' => 'trim'
-            ],
-        ],
         'folder' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:bnbfilesharing/Resources/Private/Language/locallang_db.xml:tx_bnbfilesharing_domain_model_files.folder',
+            'label' => 'LLL:EXT:bnbfilesharing/Resources/Private/Language/locallang_db.xml:tx_bnbfilesharing_domain_model_file.folder',
             'config' => [
                 'type' => 'select',
                 'renderMode' => 'tree',
@@ -166,7 +160,6 @@ return [
                         'showHeader' => true,
                     ],
                 ],
-
                 'foreign_table' => 'tx_bnbfilesharing_domain_model_folder',
                 'minitems' => 0,
                 'maxitems' => 1,
@@ -179,6 +172,9 @@ return [
                     'showAllLocalizationLink' => 1
                 ],
             ],
+        ],
+        'tstamp' => [
+            'config' => ['type' => 'passthrough']
         ],
     ],
 ];
