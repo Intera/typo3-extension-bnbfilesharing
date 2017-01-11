@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-01-11T13:11:33Z"
+          product-name="bnbfilesharing">
+        <header/>
+        <body>
+            <trans-unit id="tx_bnbfilesharing_domain_model_folder" xml:space="preserve" approved="yes">
+                <source>Folder</source>
+                <target>Ordner</target>
+            </trans-unit>
+            <trans-unit id="tx_bnbfilesharing_domain_model_folder.name" xml:space="preserve" approved="yes">
+                <source>Name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="tx_bnbfilesharing_domain_model_folder.children" xml:space="preserve" approved="yes">
+                <source>Subfolder</source>
+                <target>Unterordner</target>
+            </trans-unit>
+            <trans-unit id="tx_bnbfilesharing_domain_model_folder.files" xml:space="preserve" approved="yes">
+                <source>Files</source>
+                <target>Dateien</target>
+            </trans-unit>
+            <trans-unit id="tx_bnbfilesharing_domain_model_folder.feuser" xml:space="preserve" approved="yes">
+                <source>Owner</source>
+                <target>Eigentümer</target>
+            </trans-unit>
+            <trans-unit id="tx_bnbfilesharing_domain_model_file" xml:space="preserve" approved="yes">
+                <source>Files</source>
+                <target>Files</target>
+            </trans-unit>
+            <trans-unit id="tx_bnbfilesharing_domain_model_file.file" xml:space="preserve" approved="yes">
+                <source>File</source>
+                <target>File</target>
+            </trans-unit>
+            <trans-unit id="tx_bnbfilesharing_domain_model_file.label" xml:space="preserve" approved="yes">
+                <source>Label</source>
+                <target>Label</target>
+            </trans-unit>
+            <trans-unit id="tx_bnbfilesharing_domain_model_file.feuser" xml:space="preserve" approved="yes">
+                <source>Owner</source>
+                <target>Eigentümer</target>
+            </trans-unit>
+            <trans-unit id="tx_bnbfilesharing_domain_model_file.folder" xml:space="preserve" approved="yes">
+                <source>Folder</source>
+                <target>Ordner</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-01-11T13:11:30Z"
+          product-name="bnbfilesharing">
+        <header/>
+        <body>
+            <trans-unit id="newfolder" xml:space="preserve" approved="yes">
+                <source>New folder</source>
+                <target>Neuer Ordner</target>
+            </trans-unit>
+            <trans-unit id="fileupload" xml:space="preserve" approved="yes">
+                <source>Fileupload</source>
+                <target>Datei hochladen</target>
+            </trans-unit>
+            <trans-unit id="file" xml:space="preserve" approved="yes">
+                <source>File</source>
+                <target>Datei</target>
+            </trans-unit>
+            <trans-unit id="label" xml:space="preserve" approved="yes">
+                <source>Label</source>
+                <target>Beschriftung</target>
+            </trans-unit>
+            <trans-unit id="submit" xml:space="preserve" approved="yes">
+                <source>Submit</source>
+                <target>Abschicken</target>
+            </trans-unit>
+            <trans-unit id="editfile" xml:space="preserve" approved="yes">
+                <source>Edit file</source>
+                <target>Datei bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="confirmdeletefile1" xml:space="preserve" approved="yes">
+                <source>Do you really want delete file </source>
+                <target>Möchten Sie die Datei </target>
+            </trans-unit>
+            <trans-unit id="confirmdeletefile2" xml:space="preserve" approved="yes">
+                <source></source>
+                <target> wirklich  löschen?</target>
+            </trans-unit>
+            <trans-unit id="deletefile" xml:space="preserve" approved="yes">
+                <source>Delete file</source>
+                <target>Datei löschen</target>
+            </trans-unit>
+            <trans-unit id="delete" xml:space="preserve" approved="yes">
+                <source>Delete</source>
+                <target>Löschen</target>
+            </trans-unit>
+            <trans-unit id="abort" xml:space="preserve" approved="yes">
+                <source>Abort</source>
+                <target>Abbrechen</target>
+            </trans-unit>
+            <trans-unit id="createnewfolder" xml:space="preserve" approved="yes">
+                <source>Create new folder</source>
+                <target>Neuen Ordner anlegen</target>
+            </trans-unit>
+            <trans-unit id="name" xml:space="preserve" approved="yes">
+                <source>Name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="editfolder" xml:space="preserve" approved="yes">
+                <source>Edit folder</source>
+                <target>Ordner bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="deletefolder" xml:space="preserve" approved="yes">
+                <source>Delete folder</source>
+                <target>Ordner löschen</target>
+            </trans-unit>
+            <trans-unit id="confirmedeletefolder1" xml:space="preserve" approved="yes">
+                <source>Do you really want delete  folder </source>
+                <target>Möchten Sie den Ordner </target>
+            </trans-unit>
+            <trans-unit id="confirmedeletefolder2" xml:space="preserve" approved="yes">
+                <source></source>
+                <target> wirklich löschen?</target>
+            </trans-unit>
+            <trans-unit id="error" xml:space="preserve" approved="yes">
+                <source>Error</source>
+                <target>Fehler</target>
+            </trans-unit>
+            <trans-unit id="deleteonlyemptyfolder" xml:space="preserve" approved="yes">
+                <source>You can only delete empty folders</source>
+                <target>Sie können nur leere Ordner löschen.</target>
+            </trans-unit>
+            <trans-unit id="notallowedfiletype" xml:space="preserve" approved="yes">
+                <source>This filetype is not allowed</source>
+                <target>Diesen Dateityp dürfen Sie nicht hochladen</target>
+            </trans-unit>
+            <trans-unit id="notallowedfilesize" xml:space="preserve" approved="yes">
+                <source>This file is too big. Upload not successfull</source>
+                <target>Die Datei ist zu groß. Der Upload wurde abgebrochen.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

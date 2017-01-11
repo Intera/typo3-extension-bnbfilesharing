@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2017-01-11T13:11:33Z"
+          product-name="bnbfilesharing">
+        <header/>
+        <body>
+            <trans-unit id="tx_bnbfilesharing_domain_model_folder" xml:space="preserve">
+                <source>Folder</source>
+            </trans-unit>
+            <trans-unit id="tx_bnbfilesharing_domain_model_folder.name" xml:space="preserve">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="tx_bnbfilesharing_domain_model_folder.children" xml:space="preserve">
+                <source>Subfolder</source>
+            </trans-unit>
+            <trans-unit id="tx_bnbfilesharing_domain_model_folder.files" xml:space="preserve">
+                <source>Files</source>
+            </trans-unit>
+            <trans-unit id="tx_bnbfilesharing_domain_model_folder.feuser" xml:space="preserve">
+                <source>Owner</source>
+            </trans-unit>
+            <trans-unit id="tx_bnbfilesharing_domain_model_file" xml:space="preserve">
+                <source>Files</source>
+            </trans-unit>
+            <trans-unit id="tx_bnbfilesharing_domain_model_file.file" xml:space="preserve">
+                <source>File</source>
+            </trans-unit>
+            <trans-unit id="tx_bnbfilesharing_domain_model_file.label" xml:space="preserve">
+                <source>Label</source>
+            </trans-unit>
+            <trans-unit id="tx_bnbfilesharing_domain_model_file.feuser" xml:space="preserve">
+                <source>Owner</source>
+            </trans-unit>
+            <trans-unit id="tx_bnbfilesharing_domain_model_file.folder" xml:space="preserve">
+                <source>Folder</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

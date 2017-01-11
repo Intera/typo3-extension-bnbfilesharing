@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2017-01-11T13:11:30Z"
+          product-name="bnbfilesharing">
+        <header/>
+        <body>
+            <trans-unit id="newfolder" xml:space="preserve">
+                <source>New folder</source>
+            </trans-unit>
+            <trans-unit id="fileupload" xml:space="preserve">
+                <source>Fileupload</source>
+            </trans-unit>
+            <trans-unit id="file" xml:space="preserve">
+                <source>File</source>
+            </trans-unit>
+            <trans-unit id="label" xml:space="preserve">
+                <source>Label</source>
+            </trans-unit>
+            <trans-unit id="submit" xml:space="preserve">
+                <source>Submit</source>
+            </trans-unit>
+            <trans-unit id="editfile" xml:space="preserve">
+                <source>Edit file</source>
+            </trans-unit>
+            <trans-unit id="confirmdeletefile1" xml:space="preserve">
+                <source>Do you really want delete file </source>
+            </trans-unit>
+            <trans-unit id="confirmdeletefile2" xml:space="preserve">
+                <source></source>
+            </trans-unit>
+            <trans-unit id="deletefile" xml:space="preserve">
+                <source>Delete file</source>
+            </trans-unit>
+            <trans-unit id="delete" xml:space="preserve">
+                <source>Delete</source>
+            </trans-unit>
+            <trans-unit id="abort" xml:space="preserve">
+                <source>Abort</source>
+            </trans-unit>
+            <trans-unit id="createnewfolder" xml:space="preserve">
+                <source>Create new folder</source>
+            </trans-unit>
+            <trans-unit id="name" xml:space="preserve">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="editfolder" xml:space="preserve">
+                <source>Edit folder</source>
+            </trans-unit>
+            <trans-unit id="deletefolder" xml:space="preserve">
+                <source>Delete folder</source>
+            </trans-unit>
+            <trans-unit id="confirmedeletefolder1" xml:space="preserve">
+                <source>Do you really want delete  folder </source>
+            </trans-unit>
+            <trans-unit id="confirmedeletefolder2" xml:space="preserve">
+                <source></source>
+            </trans-unit>
+            <trans-unit id="error" xml:space="preserve">
+                <source>Error</source>
+            </trans-unit>
+            <trans-unit id="deleteonlyemptyfolder" xml:space="preserve">
+                <source>You can only delete empty folders</source>
+            </trans-unit>
+            <trans-unit id="notallowedfiletype" xml:space="preserve">
+                <source>This filetype is not allowed</source>
+            </trans-unit>
+            <trans-unit id="notallowedfilesize" xml:space="preserve">
+                <source>This file is too big. Upload not successfull</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

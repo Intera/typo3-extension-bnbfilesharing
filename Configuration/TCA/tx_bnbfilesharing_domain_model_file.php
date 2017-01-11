@@ -1,8 +1,12 @@
 <?php
+$lllPrefix = 'LLL:EXT:bnbfilesharing/Resources/Private/Language/locallang_db.xlf:';
+$lllColumnPrefix = $lllPrefix . 'tx_bnbfilesharing_domain_model_file.';
+
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:bnbfilesharing/Resources/Private/Language/locallang_db.xml:tx_bnbfilesharing_domain_model_file',
+        'title' => $lllPrefix . 'tx_bnbfilesharing_domain_model_file',
         'label' => 'file',
+        'hideTable' => true,
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -26,36 +30,37 @@ return [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, file, label, feuser, folder',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, file, label, feuser, folder,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'],
-    ],
-    'palettes' => [
-        '1' => ['showitem' => ''],
+        '1' => [
+            'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, file, label, feuser, folder,
+                --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, hidden, starttime, endtime'
+        ],
     ],
     'columns' => [
         'sys_language_uid' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.language',
+            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
             'config' => [
                 'type' => 'select',
                 'foreign_table' => 'sys_language',
                 'foreign_table_where' => 'ORDER BY sys_language.title',
                 'items' => [
-                    ['LLL:EXT:lang/locallang_general.xml:LGL.allLanguages', -1],
-                    ['LLL:EXT:lang/locallang_general.xml:LGL.default_value', 0]
+                    ['LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages', -1],
+                    ['LLL:EXT:lang/locallang_general.xlf:LGL.default_value', 0]
                 ],
             ],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
             'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.l18n_parent',
+            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
             'config' => [
                 'type' => 'select',
                 'items' => [
                     ['', 0],
                 ],
                 'foreign_table' => 'tx_bnbfilesharing_domain_model_file',
-                'foreign_table_where' => 'AND tx_bnbfilesharing_domain_model_file.pid=###CURRENT_PID### AND tx_bnbfilesharing_domain_model_file.sys_language_uid IN (-1,0)',
+                'foreign_table_where' => 'AND tx_bnbfilesharing_domain_model_file.pid=###CURRENT_PID###'
+                    . ' AND tx_bnbfilesharing_domain_model_file.sys_language_uid IN (-1,0)',
             ],
         ],
         'l10n_diffsource' => [
@@ -64,7 +69,7 @@ return [
             ],
         ],
         't3ver_label' => [
-            'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.versionLabel',
+            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -73,7 +78,7 @@ return [
         ],
         'hidden' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.hidden',
+            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type' => 'check',
             ],
@@ -81,7 +86,7 @@ return [
         'starttime' => [
             'exclude' => 1,
             'l10n_mode' => 'mergeIfNotBlank',
-            'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.starttime',
+            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
             'config' => [
                 'type' => 'input',
                 'size' => 13,
@@ -97,7 +102,7 @@ return [
         'endtime' => [
             'exclude' => 1,
             'l10n_mode' => 'mergeIfNotBlank',
-            'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.endtime',
+            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
             'config' => [
                 'type' => 'input',
                 'size' => 13,
@@ -112,7 +117,7 @@ return [
         ],
         'file' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:bnbfilesharing/Resources/Private/Language/locallang_db.xml:tx_bnbfilesharing_domain_model_file.file',
+            'label' => $lllColumnPrefix . 'file',
             'config' => [
                 'type' => 'group',
                 'internal_type' => 'file',
@@ -126,7 +131,7 @@ return [
         ],
         'label' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:bnbfilesharing/Resources/Private/Language/locallang_db.xml:tx_bnbfilesharing_domain_model_file.beschriftung',
+            'label' => $lllColumnPrefix . 'label',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -135,7 +140,7 @@ return [
         ],
         'feuser' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:bnbfilesharing/Resources/Private/Language/locallang_db.xml:tx_bnbfilesharing_domain_model_file.feuserid',
+            'label' => $lllColumnPrefix . 'feuser',
             'config' => [
                 'foreign_table' => 'fe_users',
                 'minitems' => 0,
@@ -149,7 +154,7 @@ return [
         ],
         'folder' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:bnbfilesharing/Resources/Private/Language/locallang_db.xml:tx_bnbfilesharing_domain_model_file.folder',
+            'label' => $lllColumnPrefix . 'folder',
             'config' => [
                 'type' => 'select',
                 'renderMode' => 'tree',

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2017-01-11T13:11:35Z"
+          product-name="bnbfilesharing">
+        <header/>
+        <body>
+            <trans-unit id="list_title" xml:space="preserve">
+                <source>bnbFilesharing</source>
+            </trans-unit>
+            <trans-unit id="list_plus_wiz_description" xml:space="preserve">
+                <source>Ajax driven filetree for user up- and downloads</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
