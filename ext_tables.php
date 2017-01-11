@@ -15,18 +15,5 @@ if (!defined('TYPO3_MODE')) {
     'bnbFilesharing'
 );
 
-//$pluginSignature = str_replace('_','',$_EXTKEY) . '_' . filesharing;
-//$TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
-//t3lib_extMgm::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_' .filesharing. '.xml');
-
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
-    'tx_bnbfilesharing_domain_model_folder',
-    'EXT:bnbfilesharing/Resources/Private/Language/locallang_csh_tx_bnbfilesharing_domain_model_folder.xml'
-);
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bnbfilesharing_domain_model_folder');
-
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
-    'tx_bnbfilesharing_domain_model_file',
-    'EXT:bnbfilesharing/Resources/Private/Language/locallang_csh_tx_bnbfilesharing_domain_model_file.xml'
-);
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bnbfilesharing_domain_model_file');
