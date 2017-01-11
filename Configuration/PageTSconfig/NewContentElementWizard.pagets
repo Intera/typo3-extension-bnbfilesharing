@@ -1,0 +1,15 @@
+mod.wizards.newContentElement.wizardItems {
+    special.elements {
+        bnbfilesharing_filesharing {
+            icon = EXT:bnbfilesharing/Resources/Public/Icons/NewContentElementWizard.jpg
+            title = LLL:EXT:bnbfilesharing/Resources/Private/Language/locallang_db_new_content_el.xlf:list_title
+            description = LLL:EXT:bnbfilesharing/Resources/Private/Language/locallang_db_new_content_el.xlf:list_plus_wiz_description
+            tt_content_defValues {
+                CType = list
+                list_type = bnbfilesharing_filesharing
+            }
+        }
+    }
+
+    special.show := addToList(bnbfilesharing_filesharing)
+}
