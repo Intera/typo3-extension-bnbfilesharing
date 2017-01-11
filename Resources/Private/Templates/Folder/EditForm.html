@@ -1,0 +1,33 @@
+{namespace id=Tx\Intdiv\ViewHelpers}
+
+<f:layout name="Default"/>
+
+<f:section name="main">
+
+    <h2>Verzeichnis bearbeiten</h2>
+
+    <p>
+        Verzeichnis <f:render partial="Folder/Description" arguments="{_all}"/> bearbeiten
+    </p>
+
+    <f:form action="edit" object="{folder}" name="folder">
+
+        <div class="row">
+            <div class="col-md-6">
+                <id:form.validatedControlGroup for="folder.name">
+                    <label for="tx-bnbfilesharing-folder-name">Name</label>
+                    <id:form.inlineHelpOrErrors/>
+                    <f:form.textfield id="tx-bnbfilesharing-folder-name" property="name"
+                                      class="form-control"/>
+                </id:form.validatedControlGroup>
+
+                <div class="form-group">
+                    <f:link.action action="list" controller="Folder" class="btn btn-default">Abbrechen</f:link.action>
+                    <f:form.submit value="Aktualisieren" class="btn btn-primary"/>
+                </div>
+            </div>
+        </div>
+
+    </f:form>
+
+</f:section>

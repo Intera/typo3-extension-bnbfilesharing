@@ -1,0 +1,33 @@
+{namespace id=Tx\Intdiv\ViewHelpers}
+{namespace uh=Tx\Uploadhandler\ViewHelpers}
+
+<f:layout name="Default"/>
+
+<f:section name="main">
+
+    <h2>Datei ersetzen</h2>
+
+    <p>
+        Datei
+        <f:render partial="File/Description" arguments="{_all}"/>
+        ersetzen.
+    </p>
+
+    <f:form action="uploadExisting" object="{file}" name="file" enctype="multipart/form-data">
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <h2>Dateien</h2>
+
+                <div id="tx-intmanuals-manual-media-container">
+                    <uh:widget.fileUpload object="{file}" objectName="file" property="file" idPrefix="tx-bnbfilesharing-file-file" deleteLabel="Dateien löschen" uploadLabel="Datei" maxFiles="1"/>
+                </div>
+
+                <f:link.action action="list" controller="Folder" class="btn btn-default">Abbrechen</f:link.action>
+                <f:form.submit value="Hochladen" class="btn btn-primary"/>
+            </div>
+        </div>
+    </f:form>
+
+</f:section>

@@ -1,0 +1,46 @@
+{namespace bf=Tx\Bnbfilesharing\ViewHelpers}
+
+<div class="panel-heading" role="tab" id="tx-bnbfilesharing-accordeon-header-{contentUid}-{folder.uid}">
+
+    <div class="btn-group btn-group-xs pull-right" role="group" aria-label="..." data-folder-id="{folder.uid}">
+
+        <bf:permissions.file permission="upload">
+            <f:link.action action="uploadForm" controller="File" arguments="{folder: folder}" class="btn btn-default"
+                    title="Neue Datei hochladen">
+                <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+            </f:link.action>
+        </bf:permissions.file>
+
+        <bf:permissions.folder permission="create" folder="{folder}">
+            <f:link.action action="createForm" arguments="{parentFolder: folder}" class="btn btn-default"
+                    title="Unterordner erstellen">
+                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+            </f:link.action>
+        </bf:permissions.folder>
+
+        <bf:permissions.folder permission="edit" folder="{folder}">
+            <f:link.action action="editForm" arguments="{folder: folder}" class="btn btn-default"
+                    title="Ordner bearbeiten">
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+            </f:link.action>
+        </bf:permissions.folder>
+
+        <bf:permissions.folder permission="delete" folder="{folder}">
+            <f:link.action action="deleteForm" arguments="{folder: folder}" class="btn btn-default"
+                    title="Ordner löschen">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+            </f:link.action>
+        </bf:permissions.folder>
+
+    </div>
+
+    <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" class="tx-bnbfilesharing-collapse-trigger"
+           data-parent="#tx-bnbfilesharing-accordeon-{contentUid}-{parentUid}"
+           href="#tx-bnbfilesharing-accordeon-content-{contentUid}-{folder.uid}"
+           aria-expanded="false"
+           aria-controls="tx-bnbfilesharing-accordeon-content-{contentUid}-{folder.uid}">
+            {folder.name}</a>
+    </h4>
+
+</div>

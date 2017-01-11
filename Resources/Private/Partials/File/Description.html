@@ -1,0 +1,5 @@
+<strong>{f:render(partial: 'File/Label', arguments: '{_all}')}</strong>
+<f:if condition="{file.folder}">
+    <f:then>im Verzeichnis <strong>{file.folder.name}</strong></f:then>
+    <f:else>im <strong>Wurzelverzeichnis</strong></f:else>
+</f:if>

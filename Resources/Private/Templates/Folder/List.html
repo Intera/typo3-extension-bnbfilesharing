@@ -1,127 +1,18 @@
+{namespace bf=Tx\Bnbfilesharing\ViewHelpers}
 
-<f:layout name="Default" />
+<f:layout name="Default"/>
 
 <f:section name="main">
-	
-<f:flashMessages />	
-	
 
-	
-<f:format.html>
-{fileblock}
-</f:format.html>
+    <f:flashMessages/>
 
+    <f:render partial="FolderList/FolderList" arguments="{folders: rootFolders, contentUid: contentUid, parentUid: 0}"/>
 
-
-<div style="display:none">
-
-<div id="uploadform"><h3>{f:translate(key:'fileupload')}</h3>		
-	<img id="wait" src="typo3conf/ext/bnbfilesharing/Resources/Public/img/wait18.gif" width="18" height="18">
-<f:form enctype="multipart/form-data"  id="F2" class="Tx_Bnbfilesharing_Controller_FilesController" method="post" action="uploadAction" name="F2"  pageType="1249058992" controller="Files">		
-	<f:form.hidden name="f2folderid" value="" id="f2folderid"/>	
-	<f:form.hidden name="f2fileid" value="" id="f2fileid"/>			
-	<f:form.hidden name="f2feuserid" value="" id="f2feuserid"/>	
-	<f:form.hidden name="f2feuserug" value="" id="f2feuserug"/>			
-	<label for="userfile">{f:translate(key:'file')}:</label><input type="file" name="userfile" id="userfile"/>
-	<label class="beschriftung" for="f2bezeichnung">{f:translate(key:'label')}:</label>
-	<f:form.textbox name="f2bezeichnung" value="" id="f2bezeichnung"/>	
-	<input type="submit" value="{f:translate(key:'submit')}" name="Upload" />
-</f:form>		
-</div>
-</div>
-
-
-
-
-<div style="display:none">
-<div id="editform"><h3>{f:translate(key:'editfile')}</h3>	
-<f:form id="F1" class="Tx_Bnbfilesharing_Controller_FilesController" method="post" action="ajaxEdit" name="F1"  pageType="74365989" controller="Files" onsubmit="return false">		
-	<f:form.hidden name="f1fileid" value="" id="f1fileid"/>	
-	<f:form.hidden name="f1folderid" value="" id="f1folderid"/>			
-	<f:form.hidden name="f1feuserug" value="" id="f2feuserug"/>					
-	<label class="beschriftung" for="f1bezeichnung">{f:translate(key:'label')}:</label>	
-	<f:form.textbox name="f1bezeichnung" value="xx" id="f1bezeichnung"/>	
-	<input type="submit" value="{f:translate(key:'submit')}" name="f1Edit" id="f1editbutton"/>
-</f:form>	
-</div>
-</div>
-
-<div style="display:none">
-<div id="newfolderform"><h3>{f:translate(key:'createnewfolder')}</h3>	
-<f:form id="F3"  method="post"  name="F3" onsubmit="return false">		
-	<f:form.hidden name="f3parentFolder" value="" id="f3parentFolder"/>	
-	<f:form.hidden name="f3uid" value="" id="f3uid"/>			
-	<label class="name" for="name">{f:translate(key:'name')}:</label>	
-	<f:form.textbox name="f3foldername" value="" id="f3foldername"/>	
-	<input type="submit" value="{f:translate(key:'submit')}" name="Edit" id="editfolderbutton"/>
-</f:form>	
-</div>
-</div>
-
-<div style="display:none">
-<div  id="editfolderform"><h3>{f:translate(key:'editfolder')}</h3>	
-<f:form id="F4"  method="post"  name="F4" onsubmit="return false">
-	<f:form.hidden name="f4parentFolderID" value="" id="f4parentFolderID"/>				
-	<f:form.hidden name="f4FolderID" value="" id="f4FolderID"/>						
-	<label class="editname" for="name">{f:translate(key:'name')}:</label>	
-	<f:form.textbox name="f4editfoldername" value="" id="f4editfoldername"/>	
-	<input type="submit" value="{f:translate(key:'submit')}" name="Edit" id="f4editfolderbutton"/>
-</f:form>	
-</div>
-</div>
-
-<div style="display:none">
-<div  id="confirmdeletefolder"><h3>{f:translate(key:'deletefolder')}</h3>	
-<f:form id="F5"  method="post"  name="F5" onsubmit="return false">
-	<div><p>{f:translate(key:'confirmedeletefolder1')}<strong><span id="deleteFolderName"></span></strong> {f:translate(key:'confirmedeletefolder2')}</p></div>
-	<input type="button" value="{f:translate(key:'abort')}" name="Abbrechen"  onclick="javascript:jQuery.fancybox.close()"/>
-	<input type="submit" value="{f:translate(key:'delete')}" name="Edit" id="f5deletefolderbutton"/>	
-</f:form>	
-</div>
-</div>
-
-<div style="display:none">
-<div  id="confirmdeletefile"><h3>{f:translate(key:'deletefile1')}</h3>	
-<f:form id="F6"  method="post"  name="F6" onsubmit="return false">
-	<div><p>{f:translate(key:'confirmdeletefile1')}<strong><span id='deleteFileName'></span></strong>{f:translate(key:'confirmdeletefile2')}</p></div>
-	<input type="button" value="{f:translate(key:'abort')}" name="Abbrechen"  onclick="javascript:jQuery.fancybox.close()"/>
-	<input type="submit" value="{f:translate(key:'delete')}" name="Edit" id="f6deletefilebutton"/>	
-</f:form>	
-</div>
-</div>
-
-
-
-<div style="display:none">	
-<div  id="error"><h3>{f:translate(key:'error')}</h3><p>{f:translate(key:'deleteonlyemptyfolder')}</p></div>
-</div>
-
-<div style="display:none">	
-<div  id="erroruploadtype"><h3>Fehler</h3><p>{f:translate(key:'notallowedfiletype')}</p></div>
-</div>
-
-<div style="display:none">	
-<div  id="erroruploadsize"><h3>Fehler</h3><p>{f:translate(key:'notallowedfilesize')} max: ({maxfilesize} KB)</p></div>
-</div>
-
-
-
-
-
-
-
-<script>
-var ajaxEditUrl = '<f:uri.action action="ajaxEdit" controller="Files" pageType="74365989" />';
-var ajaxDeleteUrl = '<f:uri.action action="ajaxDelete" controller="Files" pageType="74365989" />';
-var ajaxUploadUrl = '<f:uri.action action="ajaxUpload" controller="Files" pageType="74365989" />';
-var ajaxRepaintFilesUrl = '<f:uri.action action="ajaxRepaintFiles" controller="Folder" pageType="74365989" />';
-var ajaxDownloadUrl = '<f:uri.action action="ajaxDownload" controller="Files" pageType="74365988" />';
-var ajaxAddFolderUrl = '<f:uri.action action="ajaxAddFolder" controller="Folder" pageType="74365989" />';
-var ajaxEditFolderUrl = '<f:uri.action action="ajaxEditFolder" controller="Folder" pageType="74365989" />';
-var ajaxDeleteFolderUrl = '<f:uri.action action="ajaxDeleteFolder" controller="Folder" pageType="74365989" />';
-var ajaxCanDeleteFolderUrl = '<f:uri.action action="ajaxCanDeleteFolder" controller="Folder" pageType="74365989" />';
-var ajaxRepaintFolderUrl = '<f:uri.action action="ajaxRepaintFolder" controller="Folder" pageType="74365989" />';
-</script>
-
+    <bf:permissions.folder permission="createRoot">
+        <f:link.action action="createRootForm" class="btn btn-default">
+            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+            Verzeichnis anlegen
+        </f:link.action>
+    </bf:permissions.folder>
 
 </f:section>

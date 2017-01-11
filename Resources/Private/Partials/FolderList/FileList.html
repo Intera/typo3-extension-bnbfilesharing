@@ -1,0 +1,9 @@
+<f:if condition="{folder.files}">
+    <div class="tx-bnbfilesharing-accordeon-files tx-bnbfilesharing-accordeon-files-{contentUid}-{folder.uid}">
+        <table>
+            <f:for each="{folder.files}" as="file">
+                <f:render partial="FolderList/FileTableRow" arguments="{_all}"/>
+            </f:for>
+        </table>
+    </div>
+</f:if>

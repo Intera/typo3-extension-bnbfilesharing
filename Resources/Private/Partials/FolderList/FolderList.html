@@ -1,0 +1,34 @@
+<div class="panel-group" id="tx-bnbfilesharing-accordeon-{contentUid}-{parentUid}" role="tablist"
+     aria-multiselectable="true">
+
+    <f:for each="{folders}" as="folder">
+
+        <div class="panel panel-default" id="tx-bnbfilesharing-accordeon-panel-{contentUid}-{folder.uid}">
+
+            <f:render partial="FolderList/PanelHeading" arguments="{_all}"/>
+
+            <div id="tx-bnbfilesharing-accordeon-content-{contentUid}-{folder.uid}"
+                 class="panel-collapse collapse" role="tabpanel"
+                 aria-labelledby="tx-bnbfilesharing-accordeon-header-{contentUid}-{folder.uid}">
+
+                <div class="panel-body">
+                    <f:render partial="FolderList/FolderList" arguments="{folders: folder.children, parentUid: folder.uid, contentUid: contentUid}"/>
+                    <f:render partial="FolderList/FileList" arguments="{folder: folder, contentUid: contentUid}"/>
+                    <f:if condition="{folder.children}" then="">
+                        <f:else>
+                            <f:if condition="{folder.files}" then="">
+                                <f:else>
+                                    <div class="alert alert-info">
+                                        Hier existieren noch keine Dateien oder Verzeichnisse.
+                                    </div>
+                                </f:else>
+                            </f:if>
+                        </f:else>
+                    </f:if>
+                </div>
+            </div>
+
+        </div>
+
+    </f:for>
+</div>

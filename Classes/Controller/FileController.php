@@ -31,12 +31,7 @@ use Tx\Bnbfilesharing\Domain\Repository\FolderRepository;
 use Tx\Bnbfilesharing\Permissions\FilePermissions;
 use Tx\Intsvnbrowser\Exception\Exception;
 use Tx\Uploadhandler\Extbase\FileArgumentMapper;
-use TYPO3\CMS\Core\Database\DatabaseConnection;
-use TYPO3\CMS\Core\Resource\ResourceFactory;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
 
 /**
  * @package filesharing
@@ -44,11 +39,6 @@ use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
  */
 class FileController extends ActionController
 {
-    /**
-     * @var array
-     */
-    protected $configuration;
-
     /**
      * @var FileArgumentMapper
      */
@@ -68,11 +58,6 @@ class FileController extends ActionController
      * @var FolderRepository
      */
     protected $folderRepository;
-
-    /**
-     * @var int
-     */
-    protected $maxUploadFilesize = 1024;
 
     /**
      * @var int
@@ -288,13 +273,5 @@ class FileController extends ActionController
         }
         $this->addFlashMessage('Sie haben keine Berechtigung für ' . $permissionName);
         $this->redirect('list', 'Folder');
-    }
-
-    /**
-     * @return DatabaseConnection
-     */
-    private function getDatabaseConnection()
-    {
-        return $GLOBALS['TYPO3_DB'];
     }
 }

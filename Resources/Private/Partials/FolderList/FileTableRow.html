@@ -1,0 +1,54 @@
+{namespace bf=Tx\Bnbfilesharing\ViewHelpers}
+
+<tr>
+    <td>
+        <f:if condition="{file.fileObjectIfExists}">
+            <f:then>
+                <f:link.action action="download" controller="File" arguments="{file: file}" target="_blank">{f:render(partial: 'File/Label', arguments: '{_all}')}</f:link.action>
+                ({file.sizeReadable})
+            </f:then>
+            <f:else>{f:render(partial: 'File/Label', arguments: '{_all}')} (Gelöscht)</f:else>
+        </f:if>
+     </td>
+    <td>
+        <f:format.date format="%x" date="{file.tstamp}"/>
+    </td>
+    <td>
+        <f:if condition="{file.feuser.username}">
+            <f:then>
+                {file.feuser.firstname} {file.feuser.lastname}
+                ({file.feuser.username})
+            </f:then>
+            <f:else>
+                Gelöschter Benutzer
+            </f:else>
+        </f:if>
+    </td>
+    <td class="actions">
+        <div class="btn-group btn-group-xs" role="group" aria-label="..."
+             data-file-id="{file.uid}">
+
+            <bf:permissions.file permission="replace" file="{file}">
+                <f:link.action action="uploadExistingForm" controller="File" arguments="{file: file}" class="btn btn-default"
+                               title="Datei ersetzen">
+                    <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+                </f:link.action>
+            </bf:permissions.file>
+
+            <bf:permissions.file permission="edit" file="{file}">
+                <f:link.action action="editForm" controller="File" arguments="{file: file}" class="btn btn-default"
+                               title="Datei bearbeiten">
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                </f:link.action>
+            </bf:permissions.file>
+
+            <bf:permissions.file permission="delete" file="{file}">
+                <f:link.action action="deleteForm" controller="File" arguments="{file: file}" class="btn btn-default"
+                               title="Datei löschen">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </f:link.action>
+            </bf:permissions.file>
+
+        </div>
+    </td>
+</tr>

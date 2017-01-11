@@ -1,0 +1,15 @@
+{namespace id=Tx\Intdiv\ViewHelpers}
+
+<f:layout name="Default"/>
+
+<f:section name="main">
+
+    <h2>Verzeichnis erstellen</h2>
+
+    <p>
+        Unterverzeichnis innerhalb von <strong>{parentFolder.name}</strong> erstellen.
+    </p>
+
+    <f:render partial="Folder/CreateForm" arguments="{_all}"/>
+
+</f:section>

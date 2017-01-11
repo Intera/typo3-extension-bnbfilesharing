@@ -1,0 +1,35 @@
+{namespace id=Tx\Intdiv\ViewHelpers}
+
+<f:layout name="Default"/>
+
+<f:section name="main">
+
+    <h2>Datei bearbeiten</h2>
+
+    <p>
+        Datei
+        <f:render partial="File/Description" arguments="{_all}"/>
+        bearbeiten.
+    </p>
+
+    <f:form action="edit" object="{file}" name="file">
+
+        <div class="row">
+            <div class="col-md-6">
+                <id:form.validatedControlGroup for="file.label">
+                    <label for="tx-bnbfilesharing-file-label">Bezeichnung</label>
+                    <id:form.inlineHelpOrErrors>Bezeichnung entfernen um Original-Dateinamen zu verwenden.</id:form.inlineHelpOrErrors>
+                    <f:form.textfield id="tx-bnbfilesharing-file-label" property="label"
+                                      class="form-control"/>
+                </id:form.validatedControlGroup>
+
+                <div class="form-group">
+                    <f:link.action action="list" controller="Folder" class="btn btn-default">Abbrechen</f:link.action>
+                    <f:form.submit value="Aktualisieren" class="btn btn-primary"/>
+                </div>
+            </div>
+        </div>
+
+    </f:form>
+
+</f:section>

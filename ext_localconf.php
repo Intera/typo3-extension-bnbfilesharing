@@ -1,21 +1,20 @@
 <?php
 if (!defined('TYPO3_MODE')) {
-	die ('Access denied.');
+    die ('Access denied.');
 }
 
-Tx_Extbase_Utility_Extension::configurePlugin(
-	$_EXTKEY,
-	'Filesharing',
-	array(
-		'Folder' => 'list, ajaxAddFolder,ajaxEditFolder, ajaxRepaintFolder, ajaxRepaintFiles, ajaxDeleteFolder, ajaxCanDeleteFolder',
-		'Files' => 'list,ajaxEdit, ajaxDelete, ajaxUpload, ajaxRepaint, ajaxDownload',		
-	),
-	// non-cacheable actions
-	array(
-		'Folder' => 'create, update, delete',
-		'Files' => 'create, update, delete',
-		
-	)
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'Tx.' . $_EXTKEY,
+    'Filesharing',
+    [
+        'Folder' => 'list,editForm,edit,createForm,createRootForm,create,deleteForm,delete',
+        'File' => 'list,uploadForm,upload,uploadExistingForm,uploadExisting,editForm,edit,deleteForm,delete,download',
+    ],
+    // Non-cacheable actions
+    [
+        'Folder' => 'editForm,edit,createForm,createRootForm,create,deleteForm,delete',
+        'File' => 'uploadForm,upload,uploadExistingForm,uploadExisting,editForm,edit,deleteForm,delete,download',
+    ]
 );
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
