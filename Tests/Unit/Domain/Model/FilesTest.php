@@ -104,10 +104,14 @@ class FileTest extends BaseTestCase
 
     /**
      * @test
-     * @expectedException \PHPUnit_Framework_Error
      */
     public function removeFolderFromObjectStorageHoldingFolder()
     {
+        if (class_exists('TypeError')) {
+            $this->setExpectedException('TypeError');
+        } else {
+            $this->setExpectedException('PHPUnit_Framework_Error');
+        }
         $this->fixture->setFolder(null);
     }
 
