@@ -38,9 +38,7 @@ $EM_CONF[$_EXTKEY] = [
             'extbase' => '',
             'fluid' => '',
         ],
-        'conflicts' => [
-        ],
-        'suggests' => [
-        ],
+        'conflicts' => [],
+        'suggests' => [],
     ],
 ];

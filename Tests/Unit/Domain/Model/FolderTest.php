@@ -89,7 +89,7 @@ class FolderTest extends BaseTestCase
     /**
      * @test
      */
-    public function getChildrenReturnsInitialValueForObjectStorageContainingTx_Bnbfilesharing_Domain_Model_Folder()
+    public function getChildrenReturnsEmptyObjectStorageForInitialObject()
     {
         $newObjectStorage = new ObjectStorage();
         $this->assertEquals(
@@ -101,7 +101,39 @@ class FolderTest extends BaseTestCase
     /**
      * @test
      */
-    public function getFilesReturnsInitialValueForObjectStorageContainingtx_bnbfilesharing_domain_model_file()
+    public function getChildrenReturnsPreviouslySetObjectStorage()
+    {
+        $child = new Folder();
+        $objectStorageHoldingExactlyOneChildren = new ObjectStorage();
+        $objectStorageHoldingExactlyOneChildren->attach($child);
+        $this->fixture->setChildren($objectStorageHoldingExactlyOneChildren);
+
+        $this->assertSame(
+            $objectStorageHoldingExactlyOneChildren,
+            $this->fixture->getChildren()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getFilesResturnPreviouslySetObjectStorage()
+    {
+        $file = new File();
+        $objectStorageHoldingExactlyOneFiles = new ObjectStorage();
+        $objectStorageHoldingExactlyOneFiles->attach($file);
+        $this->fixture->setFiles($objectStorageHoldingExactlyOneFiles);
+
+        $this->assertSame(
+            $objectStorageHoldingExactlyOneFiles,
+            $this->fixture->getFiles()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getFilesReturnsEmptyObjectStorageForInitialObject()
     {
         $newObjectStorage = new ObjectStorage();
         $this->assertEquals(
@@ -144,38 +176,6 @@ class FolderTest extends BaseTestCase
 
         $this->assertEquals(
             $localObjectStorage,
-            $this->fixture->getFiles()
-        );
-    }
-
-    /**
-     * @test
-     */
-    public function setChildrenForObjectStorageContainingTx_Bnbfilesharing_Domain_Model_FolderSetsChildren()
-    {
-        $child = new Folder();
-        $objectStorageHoldingExactlyOneChildren = new ObjectStorage();
-        $objectStorageHoldingExactlyOneChildren->attach($child);
-        $this->fixture->setChildren($objectStorageHoldingExactlyOneChildren);
-
-        $this->assertSame(
-            $objectStorageHoldingExactlyOneChildren,
-            $this->fixture->getChildren()
-        );
-    }
-
-    /**
-     * @test
-     */
-    public function setFilesForObjectStorageContainingtx_bnbfilesharing_domain_model_fileSetsFiles()
-    {
-        $file = new File();
-        $objectStorageHoldingExactlyOneFiles = new ObjectStorage();
-        $objectStorageHoldingExactlyOneFiles->attach($file);
-        $this->fixture->setFiles($objectStorageHoldingExactlyOneFiles);
-
-        $this->assertSame(
-            $objectStorageHoldingExactlyOneFiles,
             $this->fixture->getFiles()
         );
     }

@@ -214,7 +214,6 @@ class Folder extends AbstractEntity
      */
     public function setName($name)
     {
-
         $this->name = $name;
     }
 

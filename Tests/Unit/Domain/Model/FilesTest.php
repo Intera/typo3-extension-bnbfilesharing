@@ -94,7 +94,7 @@ class FileTest extends BaseTestCase
     /**
      * @test
      */
-    public function getFolderReturnsInitialValueForObjectStorageContainingTx_Bnbfilesharing_Domain_Model_Folder()
+    public function getFolderReturnsNullAsInitialValue()
     {
         $this->assertEquals(
             null,

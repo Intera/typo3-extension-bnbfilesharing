@@ -101,5 +101,4 @@ class FolderPermissions extends AbstractPermissions
 
         return $this->getCurrentFrontendUserUid() === $owner->getUid();
     }
-
 }
