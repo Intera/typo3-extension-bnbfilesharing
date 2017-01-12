@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'bnbFilesharing',
-    'description' => 'Ajax driven filetree for user up- and downloads. Based on extbase 1.3.0, fluid 1.3.0 and TYPO3 4.5',
+    'description' => 'Frontend file exchange with virtual folders and flexible permissions.',
     'category' => 'plugin',
     'shy' => 0,
     'version' => '1.0.3',
