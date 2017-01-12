@@ -18,3 +18,16 @@ This is basically a complete rewrite with the following changes:
 ## TODO
 
 Currently there are requirements to non public Extensions that need to be resolved (intdiv, uploadhandler).
+
+## Migration
+
+Currently only manual update from version 1.x is possible. Execute these SQL queries:
+
+```sql
+RENAME TABLE tx_bnbfilesharing_domain_model_files TO tx_bnbfilesharing_domain_model_file;
+
+ALTER TABLE `tx_bnbfilesharing_domain_model_file` CHANGE `beschriftung` `label` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '';
+
+ALTER TABLE `tx_bnbfilesharing_domain_model_file` CHANGE `feuserid` `feuser` INT(11) NOT NULL DEFAULT '0';
+ALTER TABLE `tx_bnbfilesharing_domain_model_folder` CHANGE `feuserid` `feuser` INT(11) NOT NULL DEFAULT '0';
+```
