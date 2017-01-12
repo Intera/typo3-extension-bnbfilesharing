@@ -1,7 +1,7 @@
 {
     "name": "intera-typo3-extension/bnbfilesharing",
     "description": "Frontend file exchange with virtual folders and flexible permissions.",
-    "type": "typo3-extension",
+    "type": "typo3-cms-extension",
     "license": "GPL-3.0+",
     "require": {
         "php": ">=5.6.0",
