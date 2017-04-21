@@ -38,8 +38,8 @@ CREATE TABLE tx_bnbfilesharing_domain_model_folder (
 
   PRIMARY KEY (uid),
   KEY parent (pid),
-  KEY t3ver_oid (t3ver_oid, t3ver_wsid),
-  KEY language (l10n_parent, sys_language_uid)
+  KEY t3ver_oid (t3ver_oid,t3ver_wsid),
+  KEY language (l10n_parent,sys_language_uid)
 );
 
 #
@@ -80,6 +80,6 @@ CREATE TABLE tx_bnbfilesharing_domain_model_file (
 
   PRIMARY KEY (uid),
   KEY parent (pid),
-  KEY t3ver_oid (t3ver_oid, t3ver_wsid),
-  KEY language (l10n_parent, sys_language_uid)
+  KEY t3ver_oid (t3ver_oid,t3ver_wsid),
+  KEY language (l10n_parent,sys_language_uid)
 );
