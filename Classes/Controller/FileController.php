@@ -195,6 +195,7 @@ class FileController extends ActionController
     public function uploadAction(File $file)
     {
         // Permission check is done in initializeUploadAction() to prevent file processing during argument mapping.
+        $file->setFeuser($this->filePermissions->getCurrentFrontendUserModel());
         $this->fileRepository->add($file);
         $this->addFlashMessage('Die Datei wurde erfolgreich hochgeladen.');
         $this->redirect('list', 'Folder');
