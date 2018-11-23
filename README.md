@@ -1,6 +1,6 @@
 # TYPO3 Extension bnbfilesharing
 
-[![Build Status](https://travis-ci.org/Intera/typo3-extension-bnbfilesharing.svg?branch=master)](https://travis-ci.org/Intera/typo3-extension-bnbfilesharing)
+[![Build Status](https://travis-ci.org/Intera/typo3-extension-bnbfilesharing.svg?branch=develop)](https://travis-ci.org/Intera/typo3-extension-bnbfilesharing)
 
 Fork of the bnbfilesharing TYPO3 Extension.
 
