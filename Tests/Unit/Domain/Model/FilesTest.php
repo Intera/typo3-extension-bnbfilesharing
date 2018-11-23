@@ -26,7 +26,7 @@ namespace Tx\Bnbfilesharing\Tests\Unit\Domain\Model;
 
 use Tx\Bnbfilesharing\Domain\Model\File;
 use Tx\Bnbfilesharing\Domain\Model\Folder;
-use TYPO3\CMS\Core\Tests\BaseTestCase;
+use Tx\Bnbfilesharing\Tests\UnitTest;
 use TYPO3\CMS\Extbase\Domain\Model\FrontendUser;
 
 /**
@@ -35,7 +35,7 @@ use TYPO3\CMS\Extbase\Domain\Model\FrontendUser;
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
-class FileTest extends BaseTestCase
+class FileTest extends UnitTest
 {
     /**
      * @var File
