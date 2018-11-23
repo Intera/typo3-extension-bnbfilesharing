@@ -23,7 +23,7 @@ return [
             'endtime' => 'endtime',
         ],
         'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('bnbfilesharing')
-            . 'Resources/Public/Icons/tx_bnbfilesharing_domain_model_folder.gif'
+            . 'Resources/Public/Icons/tx_bnbfilesharing_domain_model_folder.gif',
     ],
     'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource,
@@ -32,7 +32,7 @@ return [
     'types' => [
         '1' => [
             'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, name, feuser, children, files,
-                --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, hidden, starttime, endtime'
+                --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, hidden, starttime, endtime',
         ],
     ],
     'palettes' => [
@@ -47,8 +47,14 @@ return [
                 'foreign_table' => 'sys_language',
                 'foreign_table_where' => 'ORDER BY sys_language.title',
                 'items' => [
-                    ['LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages', -1],
-                    ['LLL:EXT:lang/locallang_general.xlf:LGL.default_value', 0]
+                    [
+                        'LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages',
+                        -1,
+                    ],
+                    [
+                        'LLL:EXT:lang/locallang_general.xlf:LGL.default_value',
+                        0,
+                    ],
                 ],
             ],
         ],
@@ -59,7 +65,10 @@ return [
             'config' => [
                 'type' => 'select',
                 'items' => [
-                    ['', 0],
+                    [
+                        '',
+                        0,
+                    ],
                 ],
                 'foreign_table' => 'tx_bnbfilesharing_domain_model_folder',
                 'foreign_table_where' => 'AND tx_bnbfilesharing_domain_model_folder.pid=###CURRENT_PID###'
@@ -67,9 +76,7 @@ return [
             ],
         ],
         'l10n_diffsource' => [
-            'config' => [
-                'type' => 'passthrough',
-            ],
+            'config' => ['type' => 'passthrough'],
         ],
         't3ver_label' => [
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
@@ -77,14 +84,12 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'max' => 255,
-            ]
+            ],
         ],
         'hidden' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
-            'config' => [
-                'type' => 'check',
-            ],
+            'config' => ['type' => 'check'],
         ],
         'starttime' => [
             'exclude' => 1,
@@ -98,7 +103,7 @@ return [
                 'checkbox' => 0,
                 'default' => 0,
                 'range' => [
-                    'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
+                    'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y')),
                 ],
             ],
         ],
@@ -114,7 +119,7 @@ return [
                 'checkbox' => 0,
                 'default' => 0,
                 'range' => [
-                    'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
+                    'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y')),
                 ],
             ],
         ],
@@ -124,7 +129,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim,required'
+                'eval' => 'trim,required',
             ],
         ],
         'children' => [
@@ -140,14 +145,12 @@ return [
                     'levelLinksPosition' => 'top',
                     'showSynchronizationLink' => 1,
                     'showPossibleLocalizationRecords' => 1,
-                    'showAllLocalizationLink' => 1
+                    'showAllLocalizationLink' => 1,
                 ],
             ],
         ],
         'folder' => [
-            'config' => [
-                'type' => 'passthrough',
-            ],
+            'config' => ['type' => 'passthrough'],
         ],
         'feuser' => [
             'exclude' => 0,
@@ -160,7 +163,7 @@ return [
                 'internal_type' => 'db',
                 'allowed' => 'fe_users',
                 'size' => 1,
-                'eval' => 'int'
+                'eval' => 'int',
             ],
         ],
         'files' => [
