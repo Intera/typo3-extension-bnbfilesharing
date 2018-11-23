@@ -1,2 +1,3 @@
-.Build
-composer.lock
+/.Build
+/codesniffer
+/composer.lock
